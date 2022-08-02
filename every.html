@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 要求1：使用for循环封装还原every函数
+    // 要求2：该函数由数组调用，接收一个方法
+
+    // const ret = [2, 4, 8, 16]
+    // const flag = ret.every(item => {
+    //   return item % 2 === 0
+    // })
+    // console.log(flag) //true
+    // const arryevery=  function(ret){
+    //   const newArr =[]
+    //     for(let i=0;i<this.length;i++){
+    //       if(this[i] %2 === 0){
+    //         console.log(this[i]);
+    //       }
+    //     }
+    //   }
+
+
+
+    Array.prototype.arryevery = function (fn) {
+      for (let i = 0; i < this.length; i++) {
+        if (!fn(this[i])) {
+          return false
+        }
+      }
+
+      return true
+    }
+
+    const arr = [2, 2, 2, 1]
+    const newArr = arr.arryevery(function (item) {
+
+      return item % 2 === 0
+    })
+    console.log(newArr);
+  </script>
+</body>
+
+</html>

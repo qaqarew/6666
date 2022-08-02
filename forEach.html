@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    const arr = array.map(element => {
+        //        return  element.array += 30
+        //         // console.log(element);
+        //     });
+        //     const array = [20,30,40,50]
+        //     console.log(arr);
+        // var potatos = [{ id: '1001', weight: 50 },
+        // { id: '1002', weight: 80 },
+        // { id: '1003', weight: 120 },
+        // { id: '1004', weight: 40 },
+        // { id: '1005', weight: 110 },
+        // { id: '1006', weight: 60 }]
+        // console.log(potatos);
+        //     let w =[]
+        // w = potatos.map(potato => { return potato.weight += 20 })
+
+        // console.log(w);
+
+        // const ret = [1, 2, 3, 4]
+        // const flag = ret.map(item => {
+        //     return item += 1
+        // })
+        // console.log(flag) //true
+
+
+
+        Array.prototype.arrmap = function (fn) {
+            for (var i = 0; i < this.length; i++){
+              if(fn(this[i])) {return  true}
+            }
+            return false
+        }
+        const ret = [1, 2, 3, 4 ,3223,15,60]
+
+        const newArr =  ret.arrmap(function(item){
+            return item%6 ===7
+        }) 
+        console.log(newArr);
+    </script>
+</body>
+
+</html>
